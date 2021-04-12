@@ -47,7 +47,7 @@ exports.create = async function(req, res) {
 };
 
 exports.update = async function(req, res) {
-    console.log(req.files);
+    console.log(req.files)
     const hero = new Superhero({
         _id: req.params.id,
         nickname: req.body.nickname,
@@ -55,8 +55,10 @@ exports.update = async function(req, res) {
         description: req.body.description,
         superpowers: req.body.superpowers,
         catch_phrase: req.body.catch_phrase,
+        photos: req.files,
     
       });
+      
       Superhero.findByIdAndUpdate({_id: req.params.id}, hero).then(
         () => {
           res.status(201).json({

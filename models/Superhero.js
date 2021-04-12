@@ -1,5 +1,17 @@
-const {Schema, model} = require('mongoose')
+const { Schema, model } = require('mongoose')
 
+const PhotoSchema = new Schema({
+	fieldname: String,
+	originalname: String,
+	encoding: String,
+	mimetype: String,
+	destination: String,
+	filename: String,
+	path: String,
+	size: Number,
+})
+
+const Photo = model("Photo", PhotoSchema)
 
 const SuperheroSchema = new Schema({
 	nickname: {
@@ -10,14 +22,14 @@ const SuperheroSchema = new Schema({
 	},
 	description: {
 		type: String,
-    },
-    superpowers: {
+	},
+	superpowers: {
 		type: String,
-    },
-    catch_phrase: {
+	},
+	catch_phrase: {
 		type: String,
-    },
-
+	},
+	photos: [{ type: Schema.Types.ObjectId, ref: 'Photos' }]
 })
 
-module.exports = model("Superhero", SuperheroSchema);
+module.exports = model("Superhero", SuperheroSchema)

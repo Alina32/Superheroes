@@ -54,7 +54,7 @@ const Home = () => {
                 </Modal>
             </Header>
 
-            {/* <Superheroes heroes={heroes} onDelete={handleDelete} /> */}
+             <Superheroes heroes={heroes} onDelete={handleDelete} /> 
         </>
     )
 }

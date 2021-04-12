@@ -7,6 +7,7 @@ const EditableField = ({
     edit,
     name,
     value,
+    className,
     onChange: handleChange
 }) => {
     return edit ? (
@@ -18,7 +19,7 @@ const EditableField = ({
             className="Input-edit"
         />
     ) : (
-        <Text className="Text-red">{value}</Text>
+        <Text className={className}>{value}</Text>
     )
 }
 

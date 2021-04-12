@@ -17,17 +17,6 @@ class App extends Component {
           <Route exact path="/" component={Home} />      
           <Route exact path="/api/superheroes/:_id" component={Superhero} />
         </div>
-        {/* <ToastContainer
-          position="bottom-left"
-          autoClose={5000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        /> */}
       </Router>
     )
   }
