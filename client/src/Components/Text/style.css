@@ -1,0 +1,27 @@
+.Text-header {
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 32px;
+    color: rgb(255, 255, 255); 
+}
+
+.Text-strong {
+    font-family: FuturaPTWebMedium,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+.Text-p {
+    font-family: FuturaPTWebMedium,sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: rgb(100, 100, 100);
+}
+
+.Text-red {
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 32px;
+    color: tomato;
+}

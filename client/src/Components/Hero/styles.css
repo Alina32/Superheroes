@@ -1,0 +1,37 @@
+.Hero-container {
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+Button{
+    margin-left: 15px;
+}
+
+.Text-red{
+    margin-right: 15px;
+}
+
+ul{
+    list-style: square outside;
+    color: tomato;
+    padding: 0px;
+}
+
+li{
+    margin-bottom: 15px;
+}
+
+.More{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.More .Image{
+    float: right;
+    margin-top: -120px;
+}
+
+.EditableField{
+    margin: 5px;
+}

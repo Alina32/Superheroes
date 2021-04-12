@@ -1,0 +1,87 @@
+.Button-green {
+    background: #10B4A4;
+    width: 248px;
+    height: 48px;
+    box-shadow: 0px 3px 0px #009758;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 100%, 0% 20%);
+
+}
+
+.Button-red {
+    background: #ee3f3f;
+    width: 248px;
+    height: 48px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 100%, 0% 20%);
+}
+.Button-del {
+    background: #ee3f3f;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+}
+
+.Button-edit {
+    background: #0079ca;
+    width: 60px;
+    height: 30px;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 100%, 0% 20%);
+}
+
+.Button-ok {
+    background: #10B4A4 ;
+    width: 60px;
+    height: 30px;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 100%, 0% 20%);
+}
+
+.Button-default{
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+}
+
