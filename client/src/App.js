@@ -4,10 +4,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from "./Pages/Home"
 import Superhero from "./Pages/Superhero"
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-import axios from './api';
+import 'react-toastify/dist/ReactToastify.css'
+
 
 class App extends Component {
   render() {

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import Button from "../Buttons/Button"
+import Image from "../Image/Image"
 
 import './styles.css'
 import EditableField from '../EditableField'
@@ -46,14 +47,9 @@ class Hero extends Component {
                         onChange={this.props.onChange}
                     />
                     {!this.state.edit ? (
-                    <Button className="Button-edit" onClick={this.handleEdit}>Edit</Button>
+                        <Button className="Button-edit" onClick={this.handleEdit}>Edit</Button>
                     ) : (
-                        ''
-                    )}
-                    {this.state.edit ? (
-                    <Button className="Button-ok"onClick={this.handleSave}>Save</Button>
-                    ) : (
-                        ''
+                        <Button className="Button-ok" onClick={this.handleSave}>Save</Button>
                     )}
                     <hr />
                     <div className="More">
@@ -80,16 +76,31 @@ class Hero extends Component {
                                 onChange={this.props.onChange}
                             /></li>
                         </ul>
-                        <div className="Image">
+
+                        {!this.state.edit ? (
+                            <div className="Image-container">
+                                {this.props.photos.map(({ path, _id }) => (
+                                    <div className="Border" key={_id}>
+                                        <Image
+                                            width='240px'
+                                            src={`/${path}`} alt="Photo"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
                             <ImageUploader
                                 name="photos"
                                 value={this.props.photos}
                                 onChange={this.props.onChange}
                             />
-                        </div>
+                        )}
+
                     </div>
                 </div>
             </div>
+
+
         )
     }
 

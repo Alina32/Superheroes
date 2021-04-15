@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import Hero from "../Components/Hero/Hero"
 
 import Header from "../Components/Header/Header"
-
+import Link from "../Components/Link/Link"
 import Text from "../Components/Text/Text"
 
 import { getSuperhero, updateSuperheroes } from '../Components/Superheroes/SuperheroesFunctions'
@@ -45,7 +45,7 @@ class Superhero extends Component {
         return (
             <>
                 <Header>
-                    <Text className="Text-header">VIEW SUPERHEROES</Text>
+                <Link href="/"><Text className="Text-header">HOME</Text></Link> 
                 </Header>
 
                 <Hero

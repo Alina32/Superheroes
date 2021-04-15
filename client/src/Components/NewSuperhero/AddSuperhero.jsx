@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import { addSuperheroes } from '../Superheroes/SuperheroesFunctions';
+import React, { Component } from 'react'
+import { addSuperheroes } from '../Superheroes/SuperheroesFunctions'
+
+import ImageUploader from '../ImageUploader'
 
 import Button from "../Buttons/Button"
 import Input from "../Input/Input"
@@ -17,19 +19,26 @@ class AddSuperhero extends Component {
             description: '',
             superpowers: '',
             catch_phrase: '',
+            photos: [],
             superhero: []
         }
 
         this.onSubmit = this.onSubmit.bind(this)
         this.onChange = this.onChange.bind(this)
+        this.onChangeFile = this.onChange.bind(this)
     }
 
     onChange = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         })
     }
 
+    onChangeFile = e => {
+        this.setState({
+            [e.target.files]: e.target.files[0],
+        })
+    }
 
     onSubmit = async (e) => {
         e.preventDefault()
@@ -49,6 +58,7 @@ class AddSuperhero extends Component {
                 this.state.description,
                 this.state.superpowers,
                 this.state.catch_phrase,
+                this.state.photos,
             )
 
             this.setState({
@@ -57,6 +67,7 @@ class AddSuperhero extends Component {
                 description: '',
                 superpowers: '',
                 catch_phrase: '',
+                photos: [],
             })
 
             this.props.addToHeroesList(res.data);
@@ -123,7 +134,12 @@ class AddSuperhero extends Component {
                                 value={this.state.catch_phrase || ''}
                                 onChange={this.onChange.bind(this)}
                             />
-                        </div>    
+                        </div>   
+                        <ImageUploader
+                                name="photos"
+                                value={this.state.photos}
+                                onChange={this.onChangeFile.bind(this)}
+                            />
                     </form>   
                     <Button className="Button-green" 
                         onClick={this.onSubmit.bind(this)}

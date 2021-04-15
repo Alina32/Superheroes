@@ -14,7 +14,7 @@ export const getSuperheroes = () => {
         })
 }
 
-export const addSuperheroes = (nickname, real_name, description, superpowers, catch_phrase) => axios
+export const addSuperheroes = (nickname, real_name, description, superpowers, catch_phrase, photos) => axios
     .post(
         'api/superheroes',
         {
@@ -24,6 +24,7 @@ export const addSuperheroes = (nickname, real_name, description, superpowers, ca
             superpowers: superpowers,
             catch_phrase: catch_phrase,
         }
+        
     )
 
 export const updateSuperheroes = ({

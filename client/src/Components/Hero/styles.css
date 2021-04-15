@@ -4,10 +4,6 @@
     margin: 0 auto;
 }
 
-Button{
-    margin-left: 15px;
-}
-
 .Text-red{
     margin-right: 15px;
 }
@@ -34,4 +30,11 @@ li{
 
 .EditableField{
     margin: 5px;
+}
+
+.Image-container{
+    width: 1200px;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
 }

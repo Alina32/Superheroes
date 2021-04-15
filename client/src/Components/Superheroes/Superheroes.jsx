@@ -35,24 +35,29 @@ class Superheroes extends Component {
     for (let i = 1; i <= Math.ceil(superhero.length / superheroPerPage); i++) {
       pageNumbers.push(i);
     }
-
+    console.log(currentSuperheroes)
     return (
-      <div className="Container">
-        {currentSuperheroes.map((superhero, index) => (
-          <div className="Wrapper" key={index}>
-            <div className="Delete-button">
-              <Button className="Button-del" onClick={this.props.onDelete.bind(this, superhero._id)}>
-                <i className="fa fa-trash" />
-              </Button>
+      <div>
+        <div className="Wrapper">
+          {currentSuperheroes.map((superhero, index) => (
+            <div className="Border" key={index}>
+              <div className="Delete-button">
+                <Button className="Button-del" onClick={this.props.onDelete.bind(this, superhero._id)}>
+                  <i className="fa fa-trash" />
+                </Button>
+              </div>
+              <div className="Image">
+                <Image width='240px'
+                 src={superhero.photos[0]?.path}
+                />
+              </div>
+              <Link href={'/api/superheroes/' + superhero._id} className="Red">
+                <Text>{superhero.nickname}</Text>
+              </Link>
             </div>
-            <div className="Image">
-              <Image width='240px'></Image>
-            </div>
-            <Link href={'/api/superheroes/' + superhero._id} className="Red">
-              <Text>{superhero.nickname}</Text>
-            </Link>
-          </div>
-        ))}
+          ))}
+
+        </div>
         <div className="Pagination">
           <ul>
             {pageNumbers.map(number => (

@@ -15,7 +15,6 @@ const storage = multer.diskStorage({
         const randomTmpfile = uniqueFilename(os.tmpdir());
         const ext = path.extname(file.originalname)
 
-        console.log('file', file);
         cb(null, Date.now() + ext) //Appending extension
     }
 })
@@ -28,7 +27,7 @@ app.use(uploader.array('photos'))
 app.use(express.json())
 
 app.use('/api/superheroes', require('./routes/superheroes'))
-
+app.use('/uploads', express.static('./uploads'))
 
 const PORT = config.get('port') || 5000
 
