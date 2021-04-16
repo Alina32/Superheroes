@@ -4,14 +4,16 @@ import { withRouter } from 'react-router-dom'
 import Button from "../Buttons/Button"
 import Image from "../Image/Image"
 
-import './styles.css'
 import EditableField from '../EditableField'
 import ImageUploader from '../ImageUploader'
+
+import './styles.css'
 
 class Hero extends Component {
     state = {
         edit: false
     }
+
 
     handleEdit = () => this.setState(({ edit }) => ({ edit: !edit }))
     handleSave = async () => {

@@ -14,18 +14,34 @@ export const getSuperheroes = () => {
         })
 }
 
-export const addSuperheroes = (nickname, real_name, description, superpowers, catch_phrase, photos) => axios
-    .post(
-        'api/superheroes',
-        {
-            nickname: nickname,
-            real_name: real_name,
-            description: description,
-            superpowers: superpowers,
-            catch_phrase: catch_phrase,
+export const addSuperheroes = ({
+    nickname,
+    real_name,
+    description,
+    superpowers,
+    catch_phrase,
+    photos,
+}) => {
+    const formData = new FormData();
+
+    formData.append("nickname", nickname);
+    formData.append("real_name", real_name);
+    formData.append("description", description);
+    formData.append("superpowers", superpowers);
+    formData.append("catch_phrase", catch_phrase);
+
+    for (const photo of photos) {
+        formData.append("photos", photo);
+    }
+
+    console.log('formData', formData);
+
+    return axios.post(`/api/superheroes`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
         }
-        
-    )
+    })
+}
 
 export const updateSuperheroes = ({
     _id,

@@ -36,7 +36,7 @@ class AddSuperhero extends Component {
 
     onChangeFile = e => {
         this.setState({
-            [e.target.files]: e.target.files[0],
+            [e.target.files]: e.target.files,
         })
     }
 
@@ -52,14 +52,14 @@ class AddSuperhero extends Component {
             alert('Fill in all fields with data')
             return false
         } else {
-            const res = await addSuperheroes(
-                this.state.nickname,
-                this.state.real_name,
-                this.state.description,
-                this.state.superpowers,
-                this.state.catch_phrase,
-                this.state.photos,
-            )
+            const res = await addSuperheroes({
+                nickname: this.state.nickname,
+                real_name: this.state.real_name,
+                description: this.state.description,
+                superpowers: this.state.superpowers,
+                catch_phrase: this.state.catch_phrase,
+                photos: this.state.photos
+            })
 
             this.setState({
                 nickname: '',
@@ -67,7 +67,7 @@ class AddSuperhero extends Component {
                 description: '',
                 superpowers: '',
                 catch_phrase: '',
-                photos: [],
+ 
             })
 
             this.props.addToHeroesList(res.data);

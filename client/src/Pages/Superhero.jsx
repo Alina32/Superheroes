@@ -6,14 +6,14 @@ import Header from "../Components/Header/Header"
 import Link from "../Components/Link/Link"
 import Text from "../Components/Text/Text"
 
-import { getSuperhero, updateSuperheroes } from '../Components/Superheroes/SuperheroesFunctions'
+import { getSuperhero, updateSuperheroes} from '../Components/Superheroes/SuperheroesFunctions'
 
 class Superhero extends Component {
     
     constructor(props) {
         super(props)
         this.state = {
-            superhero: null
+            superhero: null,
         }
     }
     
@@ -23,11 +23,11 @@ class Superhero extends Component {
     }
 
     handleEditHero = async (hero) => {
-        console.log('hero', hero)
-
         const res = await updateSuperheroes(hero)
 
-        console.log('updateSuperheroes', res)
+        console.log(res);
+
+        this.setState({ superhero: res.data })
     }
 
     handleChange = (event) => {
@@ -38,14 +38,13 @@ class Superhero extends Component {
             }
         }))
     }
-    
+
     render() {
         const { superhero } = this.state
-        console.log(superhero);
         return (
             <>
                 <Header>
-                <Link href="/"><Text className="Text-header">HOME</Text></Link> 
+                    <Link href="/"><Text className="Text-header">HOME</Text></Link> 
                 </Header>
 
                 <Hero
@@ -58,6 +57,7 @@ class Superhero extends Component {
 
                     onSave={this.handleEditHero}
                     onChange={this.handleChange}
+                    onDelete={this.handleDelete}
                 />
             </>   
         )

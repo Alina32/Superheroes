@@ -17,20 +17,22 @@ const Home = () => {
     const handleClose = () => setOpen(false)
 
     const [heroes, setHeroes] = useState([])
+
     const fetchHeroes = async () => {
         const res = await axios.get('api/superheroes')
 
         setHeroes(res.data)
     }
+
     useEffect(() => fetchHeroes(), [])
     const addToHeroesList = (hero) => {
         setHeroes([hero, ...heroes])
+        
     }
 
-    const handleDelete = async (val, e) => {
+    const handleDelete = async (val) => {
         let conf = window.confirm(`Are you sure?`)
         if (conf) {
-            e.preventDefault()
             await deleteSuperheroes(val)
 
             setHeroes(heroes.filter((superhero) => superhero._id !== val))
@@ -54,7 +56,7 @@ const Home = () => {
                 </Modal>
             </Header>
 
-             <Superheroes heroes={heroes} onDelete={handleDelete} /> 
+             <Superheroes  heroes={heroes} onDelete={handleDelete} /> 
         </>
     )
 }

@@ -12,9 +12,8 @@ class Superheroes extends Component {
     super()
     this.state = {
       currentPage: 1,
-      superheroPerPage: 10
+      superheroPerPage: 5
     }
-    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(event) {
@@ -42,7 +41,7 @@ class Superheroes extends Component {
           {currentSuperheroes.map((superhero, index) => (
             <div className="Border" key={index}>
               <div className="Delete-button">
-                <Button className="Button-del" onClick={this.props.onDelete.bind(this, superhero._id)}>
+                <Button className="Button-del" onClick={() => this.props.onDelete(superhero._id)}>
                   <i className="fa fa-trash" />
                 </Button>
               </div>
